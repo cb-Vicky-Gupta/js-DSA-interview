@@ -33,13 +33,13 @@ const hollowSquare = (n) => {
         // i = 0 & n  => n star rest i = 0 and i = n 
         let result = '';
         for (let j = 0; j < n; j++) {
-            if (i === 0 || i === n-1) {
+            if (i === 0 || i === n - 1) {
                 result += "*"
             } else {
-                if (j === 0 || j === n-1) {
+                if (j === 0 || j === n - 1) {
                     result += "*"
-                }else{
-                    result+=" "
+                } else {
+                    result += " "
                 }
             }
         }
@@ -57,31 +57,31 @@ const printHollowPyramid = (n) => {
             result += ' '
         }
         for (let j = 0; j < i * 2 + 1; j++) {
-            if(j===0 || j === i*2 || i=== n-1 ){
+            if (j === 0 || j === i * 2 || i === n - 1) {
                 result += "*"
             }
-            else{
-                result+= " "
+            else {
+                result += " "
             }
-            
+
         }
         console.log(result)
     }
 }
 printHollowPyramid(5)
 // Print Alternating Binary Triangle
-const alternateBinary = (n)=>{
-    let flag = 1;
-    for (let i = 0; i < n; i++) {
+const alternateBinary = (n) => {
+    for (let i = 1; i <= n; i++) {
+        let flag = i % 2 === 0 ? 0 : 1
         let result = ''
-        for (let j = 0; j < i; j++) {
-            result+=flag
+        for (let j = 1; j <= i; j++) {
+            result += flag
             flag = flag === 1 ? 0 : 1
         }
         console.log(result)
     }
 }
-console.log(alternateBinary(5))
+alternateBinary(5)
 //Print Hollow Inverted Pyramid
 //Print Butterfly Pattern
 //Print Diamond Pattern
