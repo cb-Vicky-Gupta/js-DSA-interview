@@ -32,4 +32,6 @@ function twoSum(arr, targetSum){
     }
 }
 
-twoSum([2, 7, 11, 15],9)
+// twoSum([2, 7, 11, 15],9)
+
+
