@@ -115,3 +115,45 @@ function bruteForceMaxSum(arr, k) {
 }
 
 // bruteForceMaxSum([2, 1, -5, 8], 3)
+
+// optimize solution
+function optimizeMaxSum(arr, k) {
+    if(arr.length <k || !Array.isArray(arr)){
+        return console.log("Enter a valid array")
+     }
+     // first first window sum 
+     let windowSum = 0;
+     for(let i = 0; i<k; i++){
+        windowSum+=arr[i]
+     }
+     // add first elemnt and check then next add another and subtract first element
+     let maxSum = windowSum;
+     for(let i= k; i<arr.length; i++){
+        windowSum+= arr[i] - arr[i-k];
+        maxSum = Math.max(maxSum, windowSum)
+     }
+     return console.log(maxSum)
+}
+
+// optimizeMaxSum([2, 1, 5, 1, 3, 2],  3)
+
+// Given the head of a linked list, detect if there is a cycle in it. How would you do it with `O(1)` extra space?
+function hasCycle(head) {
+    if (!head || !head.next) return false
+
+    let slow = head
+    let fast = head
+
+    while (fast && fast.next) {          // what's your loop condition?
+        slow = slow.next         // move slow
+        fast = fast.next.next        // move fast
+
+        if (slow === fast) {         // when do you return true?
+            return true
+        }
+    }
+
+    return false           // no cycle found
+}
+
+// Given the root of a binary tree, return its level-order traversal (values level by level, left to right).
